@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
 import { MovieState } from '../movieState';
+//Animations
+import {motion} from 'framer-motion';
+import {pageAnimation} from '../animation';
 
 
 const MovieDetail = () => {
@@ -19,7 +22,12 @@ const MovieDetail = () => {
     return (
         <>
             {movie && ( //a movie alapból null érétken van, ami hibát eredményezne, ennek csak akkor kell renderelődnie, ha már rákattintottunk és a movie megkapja az urlt, ezért kell "movie &&()"" becsomagolni
-                <Details>
+                <Details 
+                    exit="exit" 
+                    variants={pageAnimation} 
+                    initial="hidden" 
+                    animate="show"
+                >
                     <Headline>
                         <h2>{movie.title}</h2>
                         <img src={movie.mainImg} alt="movie" />
@@ -38,7 +46,7 @@ const MovieDetail = () => {
     );
 };
 
-const Details = styled.div`
+const Details = styled(motion.div)`
     color: white;    
 `;
 const Headline = styled.div`
