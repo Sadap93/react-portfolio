@@ -16,7 +16,7 @@ function App() {
       <GlobalStyle />
       <Nav />
       <Switch>
-        <Route path="/" exact>
+        <Route path="/react-portfolio" exact>
           <AboutUs />
         </Route>
         <Route path="/work" exact>
