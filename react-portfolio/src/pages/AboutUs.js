@@ -9,6 +9,7 @@ const AboutUs = () => {
     return(
         <>
         <AboutSection />
+        <h1>Teszt</h1>
         <ServicesSection />
         <FaqSection />
         </>
