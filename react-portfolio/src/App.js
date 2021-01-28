@@ -22,7 +22,7 @@ function App() {
         <Route path="/work" exact>
           <OurWork />
         </Route>
-        <Route path="/work/:id">
+        <Route path="/work/:id"> {/*id helyére bármi mehet, az movie detail lesz*/}
           <MovieDetail />
         </Route>
         <Route path="/contact">

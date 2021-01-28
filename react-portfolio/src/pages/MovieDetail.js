@@ -3,21 +3,22 @@ import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
 import { MovieState } from '../movieState';
 
+
 const MovieDetail = () => {
-    const history = useHistory();
+    const history = useHistory(); //információt hordoz, pl location, azon belül pathname, így nyerjük ki at urlt
     const url = history.location.pathname;
     const [movies, setMovies] = useState(MovieState);
-    const [movie, setMovie] = useState(null);
+    const [movie, setMovie] = useState(null); //movie state kivonat létrehozása majd az url alapján
 
     //useEffect
-    useEffect(() => {
-        const currentMovie = movies.filter((stateMovie) => stateMovie.url === url);
-        setMovie(currentMovie[0]);
-    }, [movies, url]);
+    useEffect(() => { //azt szeretném ha rákattintok egy filmre, akkor betöltődnek a movie specifikus információi, run when the component mount
+        const currentMovie = movies.filter((stateMovie) => stateMovie.url === url); //kiszűri azt, ami egyenlő a history url-el
+        setMovie(currentMovie[0]); 
+    }, [movies, url]); //minden alkalommal, mikor a url(history) változik, hajtódjon végre a useEffect
 
     return (
         <>
-            {movie && (
+            {movie && ( //a movie alapból null érétken van, ami hibát eredményezne, ennek csak akkor kell renderelődnie, ha már rákattintottunk és a movie megkapja az urlt, ezért kell "movie &&()"" becsomagolni
                 <Details>
                     <Headline>
                         <h2>{movie.title}</h2>
