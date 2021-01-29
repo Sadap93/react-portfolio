@@ -1,11 +1,18 @@
-import {createGlobalStyle} from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
 
 *{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;  
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+html{
+    @media (max-width: 1700px){
+        font-size: 75%;
+    }
+    
 }
 
 body{
@@ -13,16 +20,9 @@ body{
     font-family: 'Inter', sans-serif;
     overflow-x: hidden;
 }
-
-html {
-    @media (max-width: 1700px){
-        font-size: 75%;
-    }
-}
-
 button{
     font-weight: bold;
-    font-size: 1.1rem;
+    font-size: 1.1.rem;
     cursor: pointer;
     padding: 1rem 2rem;
     border: 3px solid #23d997;
@@ -45,14 +45,14 @@ button{
     h4{
         font-weight: bold;
         font-size: 2rem;
-    }
-    span{
-        font-weight: bold;
-        color: #23d997;
-
+       
     }
     a{
         font-size: 1.1rem;
+    }
+    span{
+        font-weight: bold;
+        color:#23d997;
     }
     p{
         padding: 3rem 0rem;
