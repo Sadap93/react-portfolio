@@ -15,7 +15,7 @@ import {
     slider,
     sliderContainer
 } from '../animation';
-import {useScroll} from '../components/useScroll';
+import { useScroll } from '../components/useScroll';
 
 const OurWork = () => {
     const [element, controls] = useScroll();
